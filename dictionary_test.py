@@ -10,7 +10,16 @@ import csv
 my_dir = os.path.dirname(os.path.realpath(__file__))
 filename = 'dictionary_test.csv'
 
-# TODO: read the data from the csv file and put into dictionary
+my_dict={}
+
+
+with open(my_dir + '/' + filename, 'r')  as f:
+    read_csv= csv.reader(f)
+    for row in read_csv:
+        key=int(row[0])
+        value=(row[1]).lstrip()
+
+        my_dict[key]=value
 
 
 # print(read_data)
